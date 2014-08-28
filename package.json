@@ -1,0 +1,21 @@
+{
+  "name": "vz.capsule",
+  "version": "1.0.0",
+  "description": "Standarized getters and setters for any object",
+  "main": "main.js",
+  "dependencies": {
+    "vz.property": "",
+    "vz.collection": "",
+    "vz.machine": "",
+    "vz.constants": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/manvalls/vz.capsule.git"
+  },
+  "bugs": {
+    "url": "https://github.com/manvalls/vz.capsule/issues"
+  },
+  "author": "Manuel Valls Fernández <manolo@chatiku.com>",
+  "license": "LGPL-3.0"
+}
