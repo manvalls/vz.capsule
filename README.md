@@ -39,7 +39,7 @@ c.set({
 
 Creates and initializes a new Capsule, with *internal object* as its internal object.
 
-#### static Capsule.encapsulate(internal object,external object)
+#### static Capsule.encapsulate(internal object,external object[,dontInitialize])
 
 Encapsulates *internal object* inside of *external object*, letting *external object* behave like a Capsule without touching its prototype.
 

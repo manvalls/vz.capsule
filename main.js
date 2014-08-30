@@ -65,8 +65,9 @@ propertiesBag = {
   }
 };
 
-Capsule.encapsulate = function(internal,external){
+Capsule.encapsulate = function(internal,external,dontInitialize){
   Object.defineProperties(external,propertiesBag);
+  if(dontInitialize) return;
   Capsule.call(external,internal);
 };
 
