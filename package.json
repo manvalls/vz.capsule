@@ -1,6 +1,6 @@
 {
   "name": "vz.capsule",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Standarized getters and setters for any object",
   "main": "main.js",
   "dependencies": {
