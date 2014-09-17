@@ -37,11 +37,11 @@ c.set({
 
 ### Capsule object
 
-#### Constructor(internal object)
+#### Constructor([internal object])
 
-Creates and initializes a new Capsule, with *internal object* as its internal object.
+Creates and initializes a new Capsule, with *internal object* as its internal object. If *internal object* is not specified, the capsule isn't initialized and may be initialized later by calling `Capsule.call(capsule,internal_object);`.
 
-#### static Capsule.encapsulate(internal object,external object[,dontInitialize])
+#### static Capsule.encapsulate([internal object,]external object)
 
 Encapsulates *internal object* inside of *external object*, letting *external object* behave like a Capsule without touching its prototype.
 

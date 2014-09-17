@@ -8,6 +8,8 @@ var Capsule,
     propertiesBag;
 
 module.exports = Capsule = function(obj){
+  if(arguments.length == 0) return;
+  
   internalObject.of(this).value = obj;
   watcher.of(this).value = new Machine();
 };
@@ -65,10 +67,14 @@ propertiesBag = {
   }
 };
 
-Capsule.encapsulate = function(internal,external,dontInitialize){
-  Object.defineProperties(external,propertiesBag);
-  if(dontInitialize) return;
-  Capsule.call(external,internal);
+Capsule.encapsulate = function(internal,external){
+  
+  if(arguments.length == 1) Object.defineProperties(internal,propertiesBag);
+  else{
+    Object.defineProperties(external,propertiesBag);
+    Capsule.call(external,internal);
+  }
+  
 };
 
 Object.defineProperties(Capsule.prototype,propertiesBag);
