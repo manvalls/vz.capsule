@@ -6,8 +6,7 @@
   "dependencies": {
     "vz.property": "",
     "vz.collection": "",
-    "vz.machine": "",
-    "vz.constants": ""
+    "vz.machine": ""
   },
   "repository": {
     "type": "git",

@@ -2,16 +2,14 @@ var Capsule,
     Property = require('vz.property'),
     Collection = require('vz.collection'),
     Machine = require('vz.machine'),
-    constants = require('vz.constants'),
     internalObject = new Property(),
-    watcher = new Property(),
     propertiesBag;
 
 module.exports = Capsule = function(obj){
   if(arguments.length == 0) return;
   
   internalObject.set(this,obj);
-  watcher.set(this,new Machine());
+  Object.defineProperty(this,'watcher',{value: new Machine()});
 };
 
 function extend(object,props,that,str){
@@ -60,11 +58,7 @@ propertiesBag = {
   
   set: {value: function(desc){
     return extend(internalObject.get(this),desc,this,'');
-  }},
-  watcher: {
-    get: function(){ return watcher.get(this); },
-    set: constants.NOOP
-  }
+  }}
 };
 
 Capsule.encapsulate = function(internal,external){
