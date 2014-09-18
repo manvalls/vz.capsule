@@ -10,8 +10,8 @@ var Capsule,
 module.exports = Capsule = function(obj){
   if(arguments.length == 0) return;
   
-  internalObject.of(this).value = obj;
-  watcher.of(this).value = new Machine();
+  internalObject.set(this,obj);
+  watcher.set(this,new Machine());
 };
 
 function extend(object,props,that,str){
@@ -32,7 +32,7 @@ function extend(object,props,that,str){
 
 propertiesBag = {
   getByArray: {value: function(array){
-    var ret = internalObject.of(this).value,i;
+    var ret = internalObject.get(this),i;
     
     for(i = 0;i < array.length;i++) ret = ret[array[i]];
     
@@ -59,10 +59,10 @@ propertiesBag = {
   }},
   
   set: {value: function(desc){
-    return extend(internalObject.of(this).value,desc,this,'');
+    return extend(internalObject.get(this),desc,this,'');
   }},
   watcher: {
-    get: function(){ return watcher.of(this).value; },
+    get: function(){ return watcher.get(this); },
     set: constants.NOOP
   }
 };
